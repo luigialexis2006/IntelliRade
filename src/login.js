@@ -3,6 +3,7 @@ const passwordInput = document.getElementById('passwordInput');
 const saveButton = document.getElementById('saveButton');
 const nombreGuardado = document.getElementById('nombreGuardado');
 const mensajeTemporal = document.getElementById('mensaje');
+const nombreInput = document.getElementById('nombreInput');
 const togglePassword = document.getElementById("togglePassword");
 
 
@@ -20,16 +21,20 @@ function showMessage(msg, isError = false){
 function guardarUsuario(){
     const usuario = usuarioInput.value.trim();
     const contraseña = passwordInput.value.trim();
+    const nombre = nombreInput.value.trim();
 
-
-    if(usuario === '' || contraseña === ''){
+    if(usuario === '' || contraseña === '' || nombre === ''){
         showMessage('Porfavor diligencia todos los campos', true);
         return;
     }
 
-    
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario);
+    if(!correoValido){
+        showMessage('ingresa un correo electronico valido', true);
+        return
+    }
 
-    const nuevoUsuario = { usuario, contraseña };
+    const nuevoUsuario = { usuario, contraseña, nombre };
 
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -51,6 +56,7 @@ function guardarUsuario(){
     showMessage('Usuario registrado CORRECTAMENTE :) ');
     usuarioInput.value = '';
     passwordInput.value = '';
+    nombreInput.value = '';
 
 
     mostrarUsuarios(); 
@@ -63,7 +69,7 @@ function mostrarUsuarios(){
 
     usuarios.forEach((u, index) => {
         const li = document.createElement('li');
-        li.textContent = `Usuario ${index + 1}: ${u.usuario} - Contraseña: ${u.contraseña}`;
+        li.textContent = `Usuario ${index + 1}: ${u.usuario} - Contraseña: ${u.contraseña} - Nombre: ${u.nombre}`;
         listaUsuarios.appendChild(li);
     });
 }
