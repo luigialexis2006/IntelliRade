@@ -13,60 +13,42 @@ function showMessage(msg, isError = false){
     }, 3000);
 }
 
-function saveUsuario(){
+function guardarUsuario(){
     const usuario = usuarioInput.value.trim();
+    const contraseña = passwordInput.value.trim();
 
 
-    if(usuario === ''){
-        showMessage('Porfavor diligencia los datos completos', true);
+    if(usuario === '' || contraseña === ''){
+        showMessage('Porfavor diligencia todos los campos', true);
         return;
     }
 
-    localStorage.setItem('userName', usuario);
-    showMessage('Usuario registrado', false);
+    const nuevoUsuario = { usuario, contraseña };
 
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    displayLogin()
+    usuarios.push(nuevoUsuario);
 
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    showMessage('Usuario registrado CORRECTAMENTE :) ');
     usuarioInput.value = '';
-}
-
-function savePassword(){
-    const password = passwordInput.value.trim();
-    
-    if (password === '') {
-        showMessage('porfavor ingrese su contraseña', true);
-        return;
-    }
-
-    localStorage.setItem('contraseña', password);
-    showMessage('contraseña guardada', false);
-
-    displayLogin()
-
     passwordInput.value = '';
+
+
+    mostrarUsuarios();
 }
 
+function mostrarUsuarios(){
+    listaUsuarios.innerHTML = '';
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-
-
-function displayLogin(){
-
-    const savedUsuario = localStorage.getItem('userName');
-    const savedPassword = localStorage.getItem('contraseña');
-
-    if(savedUsuario && savedPassword){
-        nombreGuardado.textContent = `Bienvenido: ${savedUsuario}`;
-    } else{
-        nombreGuardado.textContent = "Bienvenido al registro";
-    }
+    usuarios.forEach((u, index) => {
+        const li = document.createElement('li');
+        li.textContent = `Usuario ${index + 1}: ${u.usuario} - Contraseña: ${u.contraseña}`;
+        listaUsuarios.appendChild(li);
+    });
 }
 
-function GuardarUsuario(){
-    saveUsuario();
-    savePassword();
-}
-
-saveButton.addEventListener('click', GuardarUsuario);
-
-document.addEventListener('DOMContentLoaded', displayLogin);
+document.addEventListener('DomContentLoaded', mostrarUsuarios);
+saveButton.addEventListener('click', guardarUsuario);
