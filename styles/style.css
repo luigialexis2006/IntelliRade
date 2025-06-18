@@ -1,48 +1,98 @@
-body { font-family: Arial; text-align: center; padding: 20px; }
-input { margin: 5px; padding: 10px; }
-#mensaje { margin-top: 15px; font-weight: bold; }
-
-h2{
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 body{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-}
-
-button{
-    border-radius: 5%;
-    width: 100px;
-    height: 30px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-p{
-    color: white;
-}
-
-.cuadro-principal{
-   background-color: gray;
-   width: 25%;
-   height: 50vh;
-   border-radius: 5%;
-   align-items: center;
-   align-content: center;
-}
-
-.bienvenida{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    img{
-        width: 20%;
-    }
-    div{
-        color: white;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+    height: 100vh;
+    margin: 0;
+}
+
+.cuadro-principal {
+    background-color: #2c2c2c;
+    width: 324px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px #ff0000aa;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000aa, 0 0 45px #ff000077;
+}
+
+h2 {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff2626;
+}
+
+#mensaje {
+   margin-top: 15px;
+    font-weight: bold;
+    color: lightgreen;
+}
+
+.password-group {
+    position: relative;
+}
+
+.password-group input {
+    padding-right: 40px;
+    padding: 10px 10px 10px 10px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #999;
+}
+
+.bienvenida {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.bienvenida img {
+    width: 50px;
+}
+
+.bienvenida div {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }

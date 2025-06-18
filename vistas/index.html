@@ -6,25 +6,21 @@
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-  
-  
   <div class="cuadro-principal">
     <h2>LOGIN</h2>
-    <input type="text" id="usuarioInput" placeholder="Usuario"><br>
-    <input type="password" id="passwordInput" placeholder="Contraseña"><br>
+    <input type="text" id="usuarioInput" placeholder="Usuario">
+    <div class="password-group">
+      <input type="password" id="passwordInput" placeholder="Contraseña">
+      <span id="togglePassword">👁️</span>
+    </div>
     <button id="saveButton">Iniciar sesión</button>
     <div class="bienvenida">
       <div id="nombreGuardado"></div>
       <img src="../templates/images/loguito.png" alt="">
     </div>
-    
     <p id="mensaje"></p>
   </div>
-  
-
-
   <script src="../src/login.js"></script>
-  
 </body>
 
 </html>

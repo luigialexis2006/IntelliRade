@@ -3,6 +3,8 @@ const passwordInput = document.getElementById('passwordInput');
 const saveButton = document.getElementById('saveButton');
 const nombreGuardado = document.getElementById('nombreGuardado');
 const mensajeTemporal = document.getElementById('mensaje');
+const togglePassword = document.getElementById("togglePassword");
+
 
 function showMessage(msg, isError = false){
     mensajeTemporal.textContent = msg;
@@ -12,6 +14,8 @@ function showMessage(msg, isError = false){
         mensajeTemporal.style.display = 'none';
     }, 3000);
 }
+
+
 
 function guardarUsuario(){
     const usuario = usuarioInput.value.trim();
@@ -23,9 +27,22 @@ function guardarUsuario(){
         return;
     }
 
+    
+
     const nuevoUsuario = { usuario, contraseña };
 
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    const usuarioExistente = usuarios.some(u => u.usuario === usuario);
+    if (usuarioExistente) {
+        showMessage('⚠️ El usuario ya existe', true);
+        return;
+    }
+
+    const contraseñaRepetida = usuarios.some(u => u.contraseña === contraseña);
+    if (contraseñaRepetida) {
+        showMessage('⚠️ Esa contraseña ya está en uso', true);
+        return;
 
     usuarios.push(nuevoUsuario);
 
@@ -36,7 +53,8 @@ function guardarUsuario(){
     passwordInput.value = '';
 
 
-    mostrarUsuarios();
+    mostrarUsuarios(); 
+    }
 }
 
 function mostrarUsuarios(){
@@ -50,5 +68,13 @@ function mostrarUsuarios(){
     });
 }
 
-document.addEventListener('DomContentLoaded', mostrarUsuarios);
+document.addEventListener('DOMContentLoaded', mostrarUsuarios);
 saveButton.addEventListener('click', guardarUsuario);
+
+
+/**Para el ojito */
+togglePassword.addEventListener("click", () => {
+  const isPasswordVisible = passwordInput.type === "text";
+  passwordInput.type = isPasswordVisible ? "password" : "text";
+  togglePassword.textContent = isPasswordVisible ? "👁️" : "🙈";
+});
