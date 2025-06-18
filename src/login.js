@@ -43,7 +43,7 @@ function guardarUsuario(){
     if (contraseñaRepetida) {
         showMessage('⚠️ Esa contraseña ya está en uso', true);
         return;
-
+    }
     usuarios.push(nuevoUsuario);
 
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
@@ -54,7 +54,7 @@ function guardarUsuario(){
 
 
     mostrarUsuarios(); 
-    }
+    
 }
 
 function mostrarUsuarios(){
