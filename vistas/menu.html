@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoVentas - Tu Moto Perfecta Te Espera</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/stylesMenu.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🏍️ MotoVentas</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                <li><a href="#" onclick="showPage('catalog')">Catálogo</a></li>
+                <li><a href="#" onclick="showPage('new-arrivals')">Nuevos Ingresos</a></li>
+                <li><a href="#" onclick="showPage('used')">Usadas</a></li>
+                <li><a href="#" onclick="showPage('financing')">Financiamiento</a></li>
+                <li><a href="#" onclick="showPage('services')">Servicios</a></li>
+                <li><a href="#" onclick="showPage('about')">Nosotros</a></li>
+                <li><a href="#" onclick="showPage('testimonials')">Testimonios</a></li>
+                <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home-section">
+            <div class="hero-content">
+                <h1>Tu Moto Perfecta Te Espera</h1>
+                <p>Descubre nuestra increíble colección de motocicletas nuevas y usadas</p>
+                <a href="#" class="cta-button" onclick="showPage('catalog')">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Home Page -->
+            <div class="page-content active" id="home">
+                <section class="features">
+                    <div class="feature">
+                        <i class="fas fa-motorcycle"></i>
+                        <h3>Amplio Catálogo</h3>
+                        <p>Más de 500 motocicletas de todas las marcas y estilos</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Mejores Precios</h3>
+                        <p>Precios competitivos y opciones de financiamiento flexibles</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <h3>Servicio Técnico</h3>
+                        <p>Mantenimiento y reparación con técnicos especializados</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Garantía Total</h3>
+                        <p>Garantía completa en todas nuestras motocicletas</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Catalog Page -->
+            <div class="page-content" id="catalog">
+                <h2 class="page-title">Catálogo de Motocicletas</h2>
+                <div class="moto-grid">
+                    <div class="moto-card">
+                        <div class="moto-image">🏍️</div>
+                        <div class="moto-info">
+                            <h3>Yamaha R1</h3>
+                            <p>Deportiva de alta cilindrada, perfecta para carretera</p>
+                            <div class="moto-price">$18,500</div>
+                            <button class="btn-primary" onclick="showMotoDetails('yamaha-r1')">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">🏍️</div>
+                        <div class="moto-info">
+                            <h3>Honda CB650R</h3>
+                            <p>Naked moderna con estilo retro y gran rendimiento</p>
+                            <div class="moto-price">$12,800</div>
+                            <button class="btn-primary" onclick="showMotoDetails('honda-cb650r')">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">🏍️</div>
+                        <div class="moto-info">
+                            <h3>Kawasaki Ninja 400</h3>
+                            <p>Deportiva ligera ideal para principiantes</p>
+                            <div class="moto-price">$8,900</div>
+                            <button class="btn-primary" onclick="showMotoDetails('kawasaki-ninja400')">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">🏍️</div>
+                        <div class="moto-info">
+                            <h3>BMW F750GS</h3>
+                            <p>Adventure touring para todo tipo de terrenos</p>
+                            <div class="moto-price">$15,200</div>
+                            <button class="btn-primary" onclick="showMotoDetails('bmw-f750gs')">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Arrivals Page -->
+            <div class="page-content" id="new-arrivals">
+                <h2 class="page-title">Nuevos Ingresos</h2>
+                <div class="moto-grid">
+                    <div class="moto-card">
+                        <div class="moto-image">✨</div>
+                        <div class="moto-info">
+                            <h3>Ducati Panigale V4</h3>
+                            <p>¡Recién llegada! La deportiva más avanzada de Ducati</p>
+                            <div class="moto-price">$28,500</div>
+                            <button class="btn-primary">¡Reservar Ya!</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">✨</div>
+                        <div class="moto-info">
+                            <h3>Triumph Street Triple</h3>
+                            <p>Nueva naked británica con carácter único</p>
+                            <div class="moto-price">$14,700</div>
+                            <button class="btn-primary">¡Reservar Ya!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Used Motorcycles Page -->
+            <div class="page-content" id="used">
+                <h2 class="page-title">Motocicletas Usadas</h2>
+                <div class="moto-grid">
+                    <div class="moto-card">
+                        <div class="moto-image">🔧</div>
+                        <div class="moto-info">
+                            <h3>Honda CBR600RR 2019</h3>
+                            <p>Excelente estado, solo 15,000 km recorridos</p>
+                            <div class="moto-price">$9,800</div>
+                            <button class="btn-primary">Ver Historial</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">🔧</div>
+                        <div class="moto-info">
+                            <h3>Yamaha MT-07 2020</h3>
+                            <p>Perfecta para ciudad, muy bien cuidada</p>
+                            <div class="moto-price">$7,200</div>
+                            <button class="btn-primary">Ver Historial</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financing Page -->
+            <div class="page-content" id="financing">
+                <h2 class="page-title">Opciones de Financiamiento</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-percentage"></i>
+                        <h3>Tasas Preferenciales</h3>
+                        <p>Desde 5.9% anual con condiciones especiales</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Plazos Flexibles</h3>
+                        <p>Hasta 60 meses para pagar tu moto soñada</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Aprobación Rápida</h3>
+                        <p>Respuesta en menos de 24 horas</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Solicitar Financiamiento</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="moto-interest">Motocicleta de Interés</label>
+                            <select id="moto-interest">
+                                <option>Seleccionar moto...</option>
+                                <option>Yamaha R1</option>
+                                <option>Honda CB650R</option>
+                                <option>Kawasaki Ninja 400</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="income">Ingresos Mensuales</label>
+                            <input type="number" id="income" placeholder="$0">
+                        </div>
+                        <div class="form-group">
+                            <label for="down-payment">Enganche Disponible</label>
+                            <input type="number" id="down-payment" placeholder="$0">
+                        </div>
+                        <button type="submit" class="btn-primary">Solicitar Pre-aprobación</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Services Page -->
+            <div class="page-content" id="services">
+                <h2 class="page-title">Nuestros Servicios</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-wrench"></i>
+                        <h3>Mantenimiento</h3>
+                        <p>Servicio completo para mantener tu moto en perfectas condiciones</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Reparaciones</h3>
+                        <p>Diagnóstico y reparación de cualquier falla mecánica</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-palette"></i>
+                        <h3>Personalización</h3>
+                        <p>Modificaciones y accesorios para hacer única tu motocicleta</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Seguros</h3>
+                        <p>Te ayudamos a encontrar el mejor seguro para tu moto</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div class="page-content" id="about">
+                <h2 class="page-title">Acerca de Nosotros</h2>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 2rem;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Con más de 15 años de experiencia en el mundo de las motocicletas, MotoVentas se ha convertido 
+                        en el distribuidor de confianza para miles de motociclistas. Nuestra pasión por las dos ruedas nos 
+                        impulsa a ofrecer siempre el mejor servicio y las mejores opciones del mercado.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h3>15+ Años</h3>
+                            <p>De experiencia en el mercado</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>5000+</h3>
+                            <p>Clientes satisfechos</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-motorcycle"></i>
+                            <h3>500+</h3>
+                            <p>Motos vendidas anualmente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Page -->
+            <div class="page-content" id="testimonials">
+                <h2 class="page-title">Lo Que Dicen Nuestros Clientes</h2>
+                <div class="moto-grid">
+                    <div class="moto-card">
+                        <div style="text-align: center; padding: 1rem;">
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="moto-info">
+                            <h3>Carlos Mendoza</h3>
+                            <p>"Excelente atención y la mejor variedad de motos. Encontré exactamente lo que buscaba."</p>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div style="text-align: center; padding: 1rem;">
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                            <i class="fas fa-star" style="color: #feca57; font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="moto-info">
+                            <h3>Ana García</h3>
+                            <p>"El proceso de financiamiento fue súper fácil. Ya estoy disfrutando mi nueva moto."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Page -->
+            <div class="page-content" id="blog">
+                <h2 class="page-title">Blog Motociclista</h2>
+                <div class="moto-grid">
+                    <div class="moto-card">
+                        <div class="moto-image">📝</div>
+                        <div class="moto-info">
+                            <h3>Consejos para Mantener tu Moto</h3>
+                            <p>Guía completa de mantenimiento básico para prolongar la vida de tu motocicleta.</p>
+                            <button class="btn-primary">Leer Más</button>
+                        </div>
+                    </div>
+                    <div class="moto-card">
+                        <div class="moto-image">📝</div>
+                        <div class="moto-info">
+                            <h3>Las Mejores Rutas para Motociclistas</h3>
+                            <p>Descubre los destinos más emocionantes para tu próximo viaje en moto.</p>
+                            <button class="btn-primary">Leer Más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Page -->
+            <div class="page-content" id="contact">
+                <h2 class="page-title">Contáctanos</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                    <div class="contact-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form onsubmit="submitContactForm(event)">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" required placeholder="Tu nombre completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" required placeholder="tu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" placeholder="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <select id="subject" required>
+                                    <option value="">Selecciona un tema...</option>
+                                    <option value="info">Información de Motos</option>
+                                    <option value="financing">Financiamiento</option>
+                                    <option value="service">Servicio Técnico</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="color: #764ba2; margin-bottom: 1.5rem;">Información de Contacto</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #764ba2; margin-right: 0.5rem;"></i>
+                            <strong>Dirección:</strong><br>
+                            Av. Principal 123, Centro<br>
+                            Ciudad, Estado 12345
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-phone" style="color: #764ba2; margin-right: 0.5rem;"></i>
+                            <strong>Teléfonos:</strong><br>
+                            Ventas: (555) 123-4567<br>
+                            Servicio: (555) 123-4568
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-envelope" style="color: #764ba2; margin-right: 0.5rem;"></i>
+                            <strong>Email:</strong><br>
+                            ventas@motoventas.com<br>
+                            servicio@motoventas.com
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="color: #764ba2; margin-right: 0.5rem;"></i>
+                            <strong>Horarios:</strong><br>
+                            Lun - Vie: 9:00 AM - 7:00 PM<br>
+                            Sábados: 9:00 AM - 5:00 PM<br>
+                            Domingos: 10:00 AM - 3:00 PM
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <h4 style="color: #764ba2; margin-bottom: 1rem;">Síguenos en Redes</h4>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="#" style="color: #764ba2; font-size: 1.5rem; text-decoration: none;">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" style="color: #764ba2; font-size: 1.5rem; text-decoration: none;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" style="color: #764ba2; font-size: 1.5rem; text-decoration: none;">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" style="color: #764ba2; font-size: 1.5rem; text-decoration: none;">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Component -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Cargando...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem;">MotoVentas</h4>
+                    <p>Tu distribuidor de confianza para motocicletas nuevas y usadas. Más de 15 años de experiencia nos respaldan.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Enlaces Rápidos</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#" onclick="showPage('catalog')" style="color: #ccc; text-decoration: none;">Catálogo</a></li>
+                        <li><a href="#" onclick="showPage('financing')" style="color: #ccc; text-decoration: none;">Financiamiento</a></li>
+                        <li><a href="#" onclick="showPage('services')" style="color: #ccc; text-decoration: none;">Servicios</a></li>
+                        <li><a href="#" onclick="showPage('contact')" style="color: #ccc; text-decoration: none;">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Marcas Disponibles</h4>
+                    <ul style="list-style: none;">
+                        <li style="color: #ccc;">Yamaha</li>
+                        <li style="color: #ccc;">Honda</li>
+                        <li style="color: #ccc;">Kawasaki</li>
+                        <li style="color: #ccc;">BMW</li>
+                        <li style="color: #ccc;">Ducati</li>
+                        <li style="color: #ccc;">Triumph</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Newsletter</h4>
+                    <p style="color: #ccc; margin-bottom: 1rem;">Recibe ofertas especiales y noticias</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="tu@email.com" style="flex: 1; padding: 0.5rem; border: none; border-radius: 5px;">
+                        <button class="btn-primary" style="padding: 0.5rem 1rem;">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            <hr style="border: 1px solid #555; margin: 2rem 0;">
+            <div style="text-align: center; color: #ccc;">
+                <p>&copy; 2025 MotoVentas. Todos los derechos reservados. | Diseñado con ❤️ para motociclistas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
