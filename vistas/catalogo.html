@@ -4,34 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IntelliRade - Catálogo de Motocicletas</title>
-  <link rel="stylesheet" href="../styles/stylesVistas.css">
+  <link rel="stylesheet" href="../styles/stylesGenerales.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #111; color: #eee; font-family: 'Segoe UI', sans-serif; }
-    .catalogo { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem; }
-    .moto-card {
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      padding: 1rem;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .moto-card:hover { transform: scale(1.05); }
-    .moto-card img { width: 100%; border-radius: 8px; }
-    .precio { font-size: 1.2rem; color: #f44336; margin-top: 1rem; }
-    .btn-comprar {
-      background: #f44336;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    .btn-comprar:hover { background: #ff6659; }
-  </style>
 </head>
 <body>
   <header>
@@ -47,49 +21,359 @@
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="testimonios.html">Testimonios</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="catalogo">
-    <div class="moto-card">
-      <img src="../templates/images/shadow-viper.avif" alt="Shadow Viper 800">
-      <h2>Shadow Viper 800</h2>
-      <p class="descripcion">Motor bicilíndrico 800cc, frenos ABS, tablero digital, ideal para ciudad y carretera.</p>
-      <ul>
-        <li>💨 0-100 km/h en 4.2s</li>
-        <li>📂 Consumo: 28 km/l</li>
-        <li>⚙️ Transmisión de 6 velocidades</li>
-      </ul>
-      <p class="precio">$8.900.000 COP</p>
-      <button class="btn-comprar">Ver más</button>
+  <main class="catalogo-main">
+    <div class="hero-catalogo">
+      <h1>Catálogo de Motocicletas</h1>
+      <p>Descubre nuestra amplia gama de motocicletas para todos los estilos y presupuestos</p>
     </div>
 
-    <div class="moto-card">
-      <img src="../templates/images/Honda.jpg" alt="Night Hawk 1200">
-      <h2>Night Hawk 1200</h2>
-      <p class="descripcion">Chasis de titanio, 1200cc turbo, luces LED violetas, especial para los amantes del poder nocturno.</p>
-      <ul>
-        <li>💨 0-100 km/h en 3.6s</li>
-        <li>📂 Consumo: 21 km/l</li>
-        <li>⚙️ Modos de manejo: Sport, Eco, Urban</li>
-      </ul>
-      <p class="precio">$15.500.000 COP</p>
-      <button class="btn-comprar">Ver más</button>
+    <div class="filtros-container">
+      <div class="filtros">
+        <button class="filtro-btn active" data-categoria="todas">Todas</button>
+        <button class="filtro-btn" data-categoria="deportivas">Deportivas</button>
+        <button class="filtro-btn" data-categoria="cruiser">Cruiser</button>
+        <button class="filtro-btn" data-categoria="adventure">Adventure</button>
+        <button class="filtro-btn" data-categoria="urbanas">Urbanas</button>
+      </div>
     </div>
 
-    <div class="moto-card">
-      <img src="../templates/images/Honda2.avif" alt="Phantom Rider 650">
-      <h2>Phantom Rider 650</h2>
-      <p class="descripcion">Diseño agresivo, suspensión inteligente, conectividad Bluetooth y casco con HUD.</p>
-      <ul>
-        <li>💨 0-100 km/h en 4.8s</li>
-        <li>📂 Consumo: 32 km/l</li>
-        <li>⚙️ Suspensión adaptable</li>
-      </ul>
-      <p class="precio">$10.200.000 COP</p>
-      <button class="btn-comprar">Ver más</button>
+    <div class="catalogo-grid">
+      <!-- Motocicletas Deportivas -->
+      <div class="moto-card" data-categoria="deportivas">
+        <div class="moto-imagen">
+          <img src="../templates/images/shadow-viper.avif" alt="Shadow Viper 800">
+          <div class="etiqueta-nueva">Nueva</div>
+        </div>
+        <div class="moto-info">
+          <h3>Shadow Viper 800</h3>
+          <p class="categoria">Deportiva</p>
+          <p class="descripcion">Motor bicilíndrico 800cc, frenos ABS, tablero digital completamente personalizable.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>0-100 km/h en 4.2s</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 28 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-cogs"></i>
+              <span>6 velocidades</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$8.900.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card" data-categoria="deportivas">
+        <div class="moto-imagen">
+          <img src="../templates/images/Honda.jpg" alt="Night Hawk 1200">
+          <div class="etiqueta-premium">Premium</div>
+        </div>
+        <div class="moto-info">
+          <h3>Night Hawk 1200</h3>
+          <p class="categoria">Deportiva Premium</p>
+          <p class="descripcion">Chasis de titanio, 1200cc turbo, luces LED violetas, tecnología de punta.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>0-100 km/h en 3.6s</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 21 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-road"></i>
+              <span>3 Modos: Sport, Eco, Urban</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$15.500.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card" data-categoria="deportivas">
+        <div class="moto-imagen">
+          <img src="../templates/images/Honda2.avif" alt="Phantom Rider 650">
+          <div class="etiqueta-tech">Tech</div>
+        </div>
+        <div class="moto-info">
+          <h3>Phantom Rider 650</h3>
+          <p class="categoria">Deportiva Tech</p>
+          <p class="descripcion">Diseño agresivo, suspensión inteligente, conectividad Bluetooth integrada.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>0-100 km/h en 4.8s</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 32 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-wifi"></i>
+              <span>Conectividad Bluetooth</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$10.200.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motocicletas Cruiser -->
+      <div class="moto-card" data-categoria="cruiser">
+        <div class="moto-imagen">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400" alt="Thunder Eagle 1400">
+          <div class="etiqueta-clasica">Clásica</div>
+        </div>
+        <div class="moto-info">
+          <h3>Thunder Eagle 1400</h3>
+          <p class="categoria">Cruiser Clásica</p>
+          <p class="descripcion">Motor V-Twin 1400cc, asiento de cuero genuino, cromados de lujo.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-horse-head"></i>
+              <span>95 HP de potencia</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 18 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-weight-hanging"></i>
+              <span>280 kg</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$18.900.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card" data-categoria="cruiser">
+        <div class="moto-imagen">
+          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400" alt="Road King 1200">
+        </div>
+        <div class="moto-info">
+          <h3>Road King 1200</h3>
+          <p class="categoria">Cruiser Touring</p>
+          <p class="descripcion">Perfecta para viajes largos, baúles incluidos, suspensión confortable.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-horse-head"></i>
+              <span>78 HP de potencia</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 22 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-suitcase"></i>
+              <span>Baúles incluidos</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$14.500.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motocicletas Adventure -->
+      <div class="moto-card" data-categoria="adventure">
+        <div class="moto-imagen">
+          <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=400" alt="Desert Storm 1100">
+          <div class="etiqueta-adventure">Adventure</div>
+        </div>
+        <div class="moto-info">
+          <h3>Desert Storm 1100</h3>
+          <p class="categoria">Adventure Premium</p>
+          <p class="descripcion">Preparada para cualquier terreno, protecciones, maletas resistentes.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-mountain"></i>
+              <span>Todo terreno</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 25 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-shield-alt"></i>
+              <span>Protecciones incluidas</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$16.800.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motocicletas Urbanas -->
+      <div class="moto-card" data-categoria="urbanas">
+        <div class="moto-imagen">
+          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400" alt="City Rider 300">
+          <div class="etiqueta-eco">Eco</div>
+        </div>
+        <div class="moto-info">
+          <h3>City Rider 300</h3>
+          <p class="categoria">Urbana Económica</p>
+          <p class="descripcion">Perfecta para la ciudad, económica, fácil manejo y estacionamiento.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-city"></i>
+              <span>Ideal ciudad</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 42 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-feather-alt"></i>
+              <span>145 kg</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$4.200.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card" data-categoria="urbanas">
+        <div class="moto-imagen">
+          <img src="https://images.unsplash.com/photo-1591149091772-4a96918d5e72?w=400" alt="Metro Style 150">
+          <div class="etiqueta-nuevo">Nuevo</div>
+        </div>
+        <div class="moto-info">
+          <h3>Metro Style 150</h3>
+          <p class="categoria">Scooter Urbano</p>
+          <p class="descripcion">Scooter moderno, automático, compartimento bajo asiento, muy económico.</p>
+          <div class="especificaciones">
+            <div class="spec">
+              <i class="fas fa-cog"></i>
+              <span>Automático CVT</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-gas-pump"></i>
+              <span>Consumo: 55 km/l</span>
+            </div>
+            <div class="spec">
+              <i class="fas fa-box"></i>
+              <span>Compartimento 18L</span>
+            </div>
+          </div>
+          <div class="precio-container">
+            <span class="precio">$3.800.000</span>
+            <span class="moneda">COP</span>
+          </div>
+          <div class="botones">
+            <button class="btn-primary">Ver Detalles</button>
+            <button class="btn-secondary">Cotizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de servicios adicionales -->
+    <div class="servicios-adicionales">
+      <h2>Servicios Incluidos</h2>
+      <div class="servicios-grid">
+        <div class="servicio-item">
+          <i class="fas fa-shipping-fast"></i>
+          <h4>Entrega Gratuita</h4>
+          <p>Llevamos tu moto hasta tu hogar sin costo adicional</p>
+        </div>
+        <div class="servicio-item">
+          <i class="fas fa-tools"></i>
+          <h4>Mantenimiento 1 Año</h4>
+          <p>Primer año de mantenimiento preventivo incluido</p>
+        </div>
+        <div class="servicio-item">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Garantía Extendida</h4>
+          <p>Hasta 3 años de garantía en motor y transmisión</p>
+        </div>
+        <div class="servicio-item">
+          <i class="fas fa-credit-card"></i>
+          <h4>Financiamiento</h4>
+          <p>Planes de financiamiento desde 12 hasta 60 meses</p>
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer>
+    <div class="container">
+      <p style="text-align: center; color: #ccc;">&copy; 2025 IntelliRade. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Funcionalidad de filtros
+    document.querySelectorAll('.filtro-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remover clase active de todos los botones
+        document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+        // Agregar clase active al botón clickeado
+        btn.classList.add('active');
+        
+        const categoria = btn.dataset.categoria;
+        const motos = document.querySelectorAll('.moto-card');
+        
+        motos.forEach(moto => {
+          if (categoria === 'todas' || moto.dataset.categoria === categoria) {
+            moto.style.display = 'block';
+          } else {
+            moto.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
