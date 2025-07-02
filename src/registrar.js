@@ -58,7 +58,7 @@ function guardarUsuario(){
     passwordInput.value = '';
     nombreInput.value = '';
     setTimeout(() => {
-            window.location.href = "../vistas/login.html"; // cámbialo por la página deseada
+            window.location.href = "login.html"; // cámbialo por la página deseada
         }, 2000);
 
     mostrarUsuarios(); 
