@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IntelliRade - Nuevas</title>
-  <link rel="stylesheet" href="../styles/stylesVistas.css">
+  <title>IntelliRade - Motocicletas Nuevas</title>
+  <link rel="stylesheet" href="../styles/stylesGenerales.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -28,8 +27,276 @@
   </header>
 
   <main class="container">
-    <h1>Nuevas</h1>
-    <p>Descubre los últimos modelos recién llegados a nuestra tienda.</p>
+    <div class="hero-section">
+      <h1>Motocicletas Nuevas 2025</h1>
+      <p class="hero-subtitle">Descubre los últimos modelos recién llegados a nuestra tienda</p>
+      <div class="hero-features">
+        <span class="feature-badge"><i class="fas fa-star"></i> Últimos Modelos</span>
+        <span class="feature-badge"><i class="fas fa-shield-alt"></i> Garantía Completa</span>
+        <span class="feature-badge"><i class="fas fa-tools"></i> Servicio Post-Venta</span>
+      </div>
+    </div>
+
+    <div class="promociones-destacadas">
+      <h2>🔥 Promociones Especiales</h2>
+      <div class="promo-banner">
+        <div class="promo-content">
+          <h3>¡Lanzamiento 2025!</h3>
+          <p>Hasta 15% de descuento en modelos seleccionados + Casco Premium GRATIS</p>
+          <span class="promo-tiempo">Válido hasta el 31 de Julio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="filtros-section">
+      <h3>Filtrar Nuevas por:</h3>
+      <div class="filtros">
+        <button class="filtro-btn active" data-categoria="todas">Todas</button>
+        <button class="filtro-btn" data-categoria="deportiva">Deportivas</button>
+        <button class="filtro-btn" data-categoria="cruiser">Cruiser</button>
+        <button class="filtro-btn" data-categoria="adventure">Adventure</button>
+        <button class="filtro-btn" data-categoria="naked">Naked</button>
+        <button class="filtro-btn" data-categoria="electrica">Eléctricas</button>
+      </div>
+    </div>
+
+    <div class="motos-grid">
+      <!-- Deportivas Nuevas -->
+      <div class="moto-card nueva deportiva">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>Yamaha R7 2025</h3>
+          <p class="moto-categoria">Deportiva</p>
+          <p class="moto-descripcion">689cc, 73 HP, chasis deltabox, quickshifter de serie, pantalla TFT a color</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 3.8s</li>
+            <li><i class="fas fa-gas-pump"></i> Consumo: 24 km/l</li>
+            <li><i class="fas fa-weight"></i> Peso: 188 kg</li>
+            <li><i class="fas fa-cog"></i> 6 velocidades</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-anterior">$32.500.000</span>
+            <span class="precio-actual">$27.625.000 COP</span>
+            <span class="descuento">15% OFF</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card nueva deportiva">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>Kawasaki Ninja ZX-6R KRT</h3>
+          <p class="moto-categoria">Deportiva</p>
+          <p class="moto-descripcion">636cc, 130 HP, electrónica avanzada, modos de conducción, ABS cornering</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 3.2s</li>
+            <li><i class="fas fa-gas-pump"></i> Consumo: 18 km/l</li>
+            <li><i class="fas fa-weight"></i> Peso: 196 kg</li>
+            <li><i class="fas fa-cog"></i> 6 velocidades + quickshift</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-actual">$48.900.000 COP</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cruiser Nuevas -->
+      <div class="moto-card nueva cruiser">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>Harley-Davidson Sportster S</h3>
+          <p class="moto-categoria">Cruiser</p>
+          <p class="moto-descripcion">1252cc V-Twin, 121 HP, chasis rígido, suspensión trasera ajustable</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 4.0s</li>
+            <li><i class="fas fa-gas-pump"></i> Consumo: 20 km/l</li>
+            <li><i class="fas fa-weight"></i> Peso: 228 kg</li>
+            <li><i class="fas fa-cog"></i> 6 velocidades</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-anterior">$68.000.000</span>
+            <span class="precio-actual">$61.200.000 COP</span>
+            <span class="descuento">10% OFF</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adventure Nuevas -->
+      <div class="moto-card nueva adventure">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>BMW R 1300 GS Adventure</h3>
+          <p class="moto-categoria">Adventure</p>
+          <p class="moto-descripcion">1300cc boxer, 145 HP, suspensión ESA, modos Enduro Pro, conectividad total</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 3.6s</li>
+            <li><i class="fas fa-gas-pump"></i> Consumo: 22 km/l</li>
+            <li><i class="fas fa-weight"></i> Peso: 237 kg</li>
+            <li><i class="fas fa-cog"></i> 6 velocidades + asistencias</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-actual">$89.500.000 COP</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Naked Nuevas -->
+      <div class="moto-card nueva naked">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>Ducati Monster 937</h3>
+          <p class="moto-categoria">Naked</p>
+          <p class="moto-descripcion">937cc Testastretta, 111 HP, chasis monocasco, suspensión Öhlins</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 3.5s</li>
+            <li><i class="fas fa-gas-pump"></i> Consumo: 21 km/l</li>
+            <li><i class="fas fa-weight"></i> Peso: 188 kg</li>
+            <li><i class="fas fa-cog"></i> 6 velocidades</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-anterior">$52.000.000</span>
+            <span class="precio-actual">$46.800.000 COP</span>
+            <span class="descuento">10% OFF</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eléctricas Nuevas -->
+      <div class="moto-card nueva electrica">
+        <div class="moto-badge nuevo">NUEVO 2025</div>
+        <div class="moto-badge eco">ECO</div>
+        <div class="moto-image">
+          <i class="fas fa-motorcycle moto-placeholder"></i>
+        </div>
+        <div class="moto-info">
+          <h3>Zero SR/S Premium</h3>
+          <p class="moto-categoria">Eléctrica</p>
+          <p class="moto-descripcion">Motor eléctrico Z-Force, 110 HP, batería 14.4 kWh, carga rápida</p>
+          <ul class="moto-specs">
+            <li><i class="fas fa-tachometer-alt"></i> 0-100 km/h: 3.3s</li>
+            <li><i class="fas fa-battery-full"></i> Autonomía: 320 km</li>
+            <li><i class="fas fa-weight"></i> Peso: 224 kg</li>
+            <li><i class="fas fa-bolt"></i> Carga rápida: 1 hora</li>
+          </ul>
+          <div class="moto-precio">
+            <span class="precio-actual">$74.900.000 COP</span>
+            <span class="eco-incentivo">Incluye incentivos ambientales</span>
+          </div>
+          <div class="moto-actions">
+            <button class="btn btn-primary">Ver Detalles</button>
+            <button class="btn btn-secondary">Financiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ventajas-nuevas">
+      <h2>Ventajas de Comprar Nueva</h2>
+      <div class="ventajas-grid">
+        <div class="ventaja-item">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Garantía Completa</h4>
+          <p>2 años de garantía de fábrica + 1 año adicional de IntelliRade</p>
+        </div>
+        
+        <div class="ventaja-item">
+          <i class="fas fa-tools"></i>
+          <h4>Mantenimientos Gratis</h4>
+          <p>Primeros 3 servicios incluidos durante el primer año</p>
+        </div>
+        
+        <div class="ventaja-item">
+          <i class="fas fa-motorcycle"></i>
+          <h4>Última Tecnología</h4>
+          <p>Equipadas con las últimas innovaciones y sistemas de seguridad</p>
+        </div>
+        
+        <div class="ventaja-item">
+          <i class="fas fa-certificate"></i>
+          <h4>Certificación Original</h4>
+          <p>Documentos originales y certificación de autenticidad</p>
+        </div>
+        
+        <div class="ventaja-item">
+          <i class="fas fa-headset"></i>
+          <h4>Soporte 24/7</h4>
+          <p>Asistencia técnica y en carretera las 24 horas</p>
+        </div>
+        
+        <div class="ventaja-item">
+          <i class="fas fa-gift"></i>
+          <h4>Kit de Bienvenida</h4>
+          <p>Casco, guantes, candado y kit de limpieza incluidos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="financiamiento-section">
+      <h2>Opciones de Financiamiento</h2>
+      <div class="financiamiento-options">
+        <div class="finance-option">
+          <h4><i class="fas fa-percentage"></i> Tasa Preferencial</h4>
+          <p>Desde 0.9% mensual para motocicletas nuevas</p>
+        </div>
+        
+        <div class="finance-option">
+          <h4><i class="fas fa-calendar-alt"></i> Hasta 60 Meses</h4>
+          <p>Plazos flexibles adaptados a tu presupuesto</p>
+        </div>
+        
+        <div class="finance-option">
+          <h4><i class="fas fa-handshake"></i> Aprobación Rápida</h4>
+          <p>Respuesta en menos de 2 horas hábiles</p>
+        </div>
+      </div>
+      <a href="financiamiento.html" class="btn btn-primary">Ver Opciones de Financiamiento</a>
+    </div>
+
+    <div class="cta-section">
+      <h2>¿Listo para estrenar tu nueva moto?</h2>
+      <p>Agenda tu cita y conoce de cerca estos increíbles modelos</p>
+      <div class="cta-buttons">
+        <a href="contacto.html" class="btn btn-primary">Agendar Cita</a>
+        <a href="tel:+573001234567" class="btn btn-secondary">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer>

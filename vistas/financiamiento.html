@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IntelliRade - Financiamiento</title>
-  <link rel="stylesheet" href="../styles/stylesVistas.css">
+  <link rel="stylesheet" href="../styles/stylesGenerales.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -28,8 +27,332 @@
   </header>
 
   <main class="container">
-    <h1>Financiamiento</h1>
-    <p>Opciones flexibles de financiamiento con tasas preferenciales.</p>
+    <div class="hero-section">
+      <h1>Financiamiento</h1>
+      <p class="hero-subtitle">Opciones flexibles de financiamiento con tasas preferenciales</p>
+    </div>
+
+    <div class="content-section">
+      <div class="intro-financing">
+        <h2>Haz Realidad tu Sueño Motociclístico</h2>
+        <p>En IntelliRade sabemos que adquirir la motocicleta de tus sueños es una inversión importante. Por eso, hemos desarrollado opciones de financiamiento flexibles y accesibles que se adaptan a tu presupuesto y estilo de vida.</p>
+      </div>
+
+      <div class="financing-options">
+        <h3>Opciones de Financiamiento</h3>
+        <div class="options-grid">
+          <div class="option-card premium">
+            <div class="option-header">
+              <i class="fas fa-crown"></i>
+              <h4>Financiamiento Directo</h4>
+              <div class="badge">Más Popular</div>
+            </div>
+            <div class="option-content">
+              <div class="interest-rate">Desde 1.2%</div>
+              <div class="rate-label">Tasa mensual</div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Sin requisitos de avalista</li>
+                <li><i class="fas fa-check"></i> Aprobación en 24 horas</li>
+                <li><i class="fas fa-check"></i> Cuotas hasta 60 meses</li>
+                <li><i class="fas fa-check"></i> 0% cuota inicial*</li>
+                <li><i class="fas fa-check"></i> Seguro de vida incluido</li>
+              </ul>
+              <div class="option-footer">
+                <button class="btn btn-primary">Solicitar Ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-card">
+            <div class="option-header">
+              <i class="fas fa-university"></i>
+              <h4>Financiamiento Bancario</h4>
+            </div>
+            <div class="option-content">
+              <div class="interest-rate">Desde 1.8%</div>
+              <div class="rate-label">Tasa mensual</div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Convenios con bancos líderes</li>
+                <li><i class="fas fa-check"></i> Tasas preferenciales</li>
+                <li><i class="fas fa-check"></i> Cuotas hasta 72 meses</li>
+                <li><i class="fas fa-check"></i> Cuota inicial desde 20%</li>
+                <li><i class="fas fa-check"></i> Proceso 100% digital</li>
+              </ul>
+              <div class="option-footer">
+                <button class="btn btn-secondary">Más Información</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-card">
+            <div class="option-header">
+              <i class="fas fa-credit-card"></i>
+              <h4>Financiamiento Express</h4>
+            </div>
+            <div class="option-content">
+              <div class="interest-rate">Desde 2.1%</div>
+              <div class="rate-label">Tasa mensual</div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Aprobación inmediata</li>
+                <li><i class="fas fa-check"></i> Mínimos requisitos</li>
+                <li><i class="fas fa-check"></i> Cuotas hasta 36 meses</li>
+                <li><i class="fas fa-check"></i> Para motos usadas</li>
+                <li><i class="fas fa-check"></i> Sin trámites extensos</li>
+              </ul>
+              <div class="option-footer">
+                <button class="btn btn-secondary">Consultar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator-section">
+        <h3>Simulador de Financiamiento</h3>
+        <div class="calculator-container">
+          <div class="calculator-inputs">
+            <div class="input-group">
+              <label for="motoPrice">Precio de la Motocicleta</label>
+              <input type="number" id="motoPrice" placeholder="Ej: 15000000" min="1000000" max="100000000">
+              <span class="currency">COP</span>
+            </div>
+            
+            <div class="input-group">
+              <label for="downPayment">Cuota Inicial</label>
+              <input type="number" id="downPayment" placeholder="Ej: 3000000" min="0">
+              <span class="currency">COP</span>
+            </div>
+            
+            <div class="input-group">
+              <label for="months">Número de Cuotas</label>
+              <select id="months">
+                <option value="12">12 meses</option>
+                <option value="18">18 meses</option>
+                <option value="24">24 meses</option>
+                <option value="36" selected>36 meses</option>
+                <option value="48">48 meses</option>
+                <option value="60">60 meses</option>
+              </select>
+            </div>
+            
+            <div class="input-group">
+              <label for="interestRate">Tasa de Interés Mensual</label>
+              <select id="interestRate">
+                <option value="1.2">1.2% - Financiamiento Directo</option>
+                <option value="1.8" selected>1.8% - Financiamiento Bancario</option>
+                <option value="2.1">2.1% - Financiamiento Express</option>
+              </select>
+            </div>
+            
+            <button class="btn btn-primary" onclick="calculateFinancing()">Calcular Cuota</button>
+          </div>
+          
+          <div class="calculator-results">
+            <h4>Resultado del Cálculo</h4>
+            <div class="result-item">
+              <span class="result-label">Monto a Financiar:</span>
+              <span class="result-value" id="financedAmount">$0 COP</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Cuota Mensual:</span>
+              <span class="result-value highlight" id="monthlyPayment">$0 COP</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total a Pagar:</span>
+              <span class="result-value" id="totalPayment">$0 COP</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total Intereses:</span>
+              <span class="result-value" id="totalInterest">$0 COP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h3>Requisitos para Financiamiento</h3>
+        <div class="requirements-grid">
+          <div class="requirement-category">
+            <h4><i class="fas fa-user"></i> Personas Naturales</h4>
+            <ul>
+              <li>Cédula de ciudadanía vigente</li>
+              <li>Ingresos mínimos de $2.500.000</li>
+              <li>Antigüedad laboral mínima 6 meses</li>
+              <li>Carta laboral o certificado de ingresos</li>
+              <li>Últimos 3 extractos bancarios</li>
+              <li>Referencias comerciales y personales</li>
+              <li>Autorización centrales de riesgo</li>
+            </ul>
+          </div>
+          
+          <div class="requirement-category">
+            <h4><i class="fas fa-building"></i> Personas Jurídicas</h4>
+            <ul>
+              <li>Certificado de existencia y representación legal</li>
+              <li>NIT y RUT actualizados</li>
+              <li>Estados financieros de los últimos 2 años</li>
+              <li>Declaración de renta último año</li>
+              <li>Autorizaciones de socios o junta directiva</li>
+              <li>Referencias comerciales verificables</li>
+              <li>Flujo de caja proyectado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-section">
+        <h3>Nuestros Aliados Financieros</h3>
+        <div class="partners-grid">
+          <div class="partner-item">
+            <i class="fas fa-university"></i>
+            <h4>Banco de Bogotá</h4>
+            <p>Tasas preferenciales para clientes IntelliRade</p>
+          </div>
+          
+          <div class="partner-item">
+            <i class="fas fa-university"></i>
+            <h4>Bancolombia</h4>
+            <p>Proceso digital y aprobación rápida</p>
+          </div>
+          
+          <div class="partner-item">
+            <i class="fas fa-university"></i>
+            <h4>Davivienda</h4>
+            <p>Financiamiento hasta 72 meses</p>
+          </div>
+          
+          <div class="partner-item">
+            <i class="fas fa-university"></i>
+            <h4>BBVA</h4>
+            <p>Cuotas flexibles y seguros incluidos</p>
+          </div>
+          
+          <div class="partner-item">
+            <i class="fas fa-credit-card"></i>
+            <h4>Credibanco</h4>
+            <p>Especialistas en financiamiento vehicular</p>
+          </div>
+          
+          <div class="partner-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Cooperativas</h4>
+            <p>Convenios especiales con múltiples cooperativas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-section">
+        <h3>Beneficios Adicionales</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Seguro Todo Riesgo</h4>
+            <p>Protección completa para tu inversión con las mejores aseguradoras del país.</p>
+          </div>
+          
+          <div class="benefit-item">
+            <i class="fas fa-tools"></i>
+            <h4>Mantenimiento Gratuito</h4>
+            <p>Los primeros 3 servicios de mantenimiento completamente gratis.</p>
+          </div>
+          
+          <div class="benefit-item">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Curso de Conducción</h4>
+            <p>Capacitación gratuita para manejo seguro y defensivo.</p>
+          </div>
+          
+          <div class="benefit-item">
+            <i class="fas fa-users"></i>
+            <h4>Club IntelliRade</h4>
+            <p>Acceso exclusivo a eventos, rodadas y descuentos especiales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-section">
+        <h3>Proceso de Financiamiento</h3>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Solicitud</h4>
+              <p>Completa nuestra solicitud online o visítanos en persona</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Documentación</h4>
+              <p>Entrega los documentos requeridos según tu perfil</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Evaluación</h4>
+              <p>Nuestro equipo evalúa tu solicitud en máximo 48 horas</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Aprobación</h4>
+              <p>Recibe la aprobación y firma los documentos</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Entrega</h4>
+              <p>Retira tu motocicleta nueva y comienza a disfrutar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h3>Preguntas Frecuentes</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>¿Puedo financiar una motocicleta usada?</h4>
+            <p>Sí, ofrecemos financiamiento para motocicletas usadas de nuestro inventario con tasas especiales y hasta 36 meses de plazo.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿Qué pasa si tengo historial crediticio negativo?</h4>
+            <p>Evaluamos cada caso individualmente. Tenemos opciones especiales con avalistas o cuotas iniciales más altas.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿Puedo hacer abonos adicionales?</h4>
+            <p>Absolutamente. Puedes hacer abonos extras sin penalidades para reducir el tiempo de financiamiento.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿El seguro es obligatorio?</h4>
+            <p>Sí, es requisito tener seguro todo riesgo durante todo el período de financiamiento para proteger tu inversión.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h3>¿Listo para Financiar tu Motocicleta?</h3>
+        <p>Nuestros asesores especializados te ayudarán a encontrar el plan perfecto</p>
+        <div class="cta-buttons">
+          <a href="contacto.html" class="btn btn-primary">Solicitar Financiamiento</a>
+          <a href="catalogo.html" class="btn btn-secondary">Ver Motocicletas</a>
+        </div>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> Línea directa: +57 300 123 4567</p>
+          <p><i class="fas fa-envelope"></i> financiamiento@intellirade.com</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -37,5 +360,37 @@
       <p style="text-align: center; color: #ccc;">&copy; 2025 IntelliRade. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    function calculateFinancing() {
+      const price = parseFloat(document.getElementById('motoPrice').value) || 0;
+      const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+      const months = parseInt(document.getElementById('months').value);
+      const rate = parseFloat(document.getElementById('interestRate').value) / 100;
+      
+      if (price <= 0) {
+        alert('Por favor ingresa un precio válido');
+        return;
+      }
+      
+      const financedAmount = price - downPayment;
+      
+      if (financedAmount <= 0) {
+        alert('La cuota inicial no puede ser mayor al precio de la motocicleta');
+        return;
+      }
+      
+      // Fórmula de cuota fija
+      const monthlyPayment = financedAmount * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      const totalPayment = monthlyPayment * months + downPayment;
+      const totalInterest = totalPayment - price;
+      
+      // Mostrar resultados
+      document.getElementById('financedAmount').textContent = '$' + financedAmount.toLocaleString('es-CO') + ' COP';
+      document.getElementById('monthlyPayment').textContent = '$' + Math.round(monthlyPayment).toLocaleString('es-CO') + ' COP';
+      document.getElementById('totalPayment').textContent = '$' + Math.round(totalPayment).toLocaleString('es-CO') + ' COP';
+      document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString('es-CO') + ' COP';
+    }
+  </script>
 </body>
 </html>

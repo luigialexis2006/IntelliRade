@@ -1,0 +1,457 @@
+/* Estilos Generales para IntelliRade */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header y Navegación */
+header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #ff6666;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ff4444;
+  transform: translateY(-2px);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff4444;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Estilos del Catálogo */
+.catalogo-main {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.hero-catalogo {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  margin-bottom: 3rem;
+}
+
+.hero-catalogo h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ff4444;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-catalogo p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filtros */
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  background: #2d2d2d;
+  color: #ffffff;
+  border: 2px solid #444;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.filtro-btn:hover {
+  background: #ff4444;
+  border-color: #ff4444;
+  transform: translateY(-2px);
+}
+
+.filtro-btn.active {
+  background: #ff4444;
+  border-color: #ff4444;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+}
+
+/* Grid del Catálogo */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de Motos */
+.moto-card {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.moto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 68, 68, 0.2);
+}
+
+.moto-imagen {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.moto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.moto-card:hover .moto-imagen img {
+  transform: scale(1.1);
+}
+
+/* Etiquetas */
+.etiqueta-nueva,
+.etiqueta-premium,
+.etiqueta-tech,
+.etiqueta-clasica,
+.etiqueta-adventure,
+.etiqueta-eco,
+.etiqueta-nuevo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.etiqueta-nueva { background: #4CAF50; }
+.etiqueta-premium { background: #9C27B0; }
+.etiqueta-tech { background: #2196F3; }
+.etiqueta-clasica { background: #FF9800; }
+.etiqueta-adventure { background: #795548; }
+.etiqueta-eco { background: #8BC34A; }
+.etiqueta-nuevo { background: #FF4444; }
+
+/* Información de la Moto */
+.moto-info {
+  padding: 2rem;
+}
+
+.moto-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ff4444;
+}
+
+.categoria {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.descripcion {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Especificaciones */
+.especificaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #cccccc;
+}
+
+.spec i {
+  color: #ff4444;
+  width: 20px;
+}
+
+/* Precio */
+.precio-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.precio {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4444;
+}
+
+.moneda {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Botones */
+.botones {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #ff4444;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #ff6666;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+}
+
+.btn-secondary:hover {
+  background: #ff4444;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Servicios Adicionales */
+.servicios-adicionales {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.servicios-adicionales h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ff4444;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicio-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.servicio-item:hover {
+  transform: translateY(-5px);
+}
+
+.servicio-item i {
+  font-size: 3rem;
+  color: #ff4444;
+  margin-bottom: 1rem;
+}
+
+.servicio-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.servicio-item p {
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero-catalogo h1 {
+    font-size: 2rem;
+  }
+  
+  .filtros {
+    justify-content: center;
+  }
+  
+  .catalogo-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .botones {
+    flex-direction: column;
+  }
+  
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero-catalogo {
+    padding: 2rem 1rem;
+  }
+  
+  .moto-info {
+    padding: 1.5rem;
+  }
+  
+  .especificaciones {
+    gap: 0.5rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.moto-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efectos de hover adicionales */
+.moto-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 68, 68, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.moto-card:hover::before {
+  opacity: 1;
+}

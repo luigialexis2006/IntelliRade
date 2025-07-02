@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IntelliRade - Contacto</title>
-  <link rel="stylesheet" href="../styles/stylesVistas.css">
+  <link rel="stylesheet" href="../styles/stylesGenerales.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -28,8 +27,278 @@
   </header>
 
   <main class="container">
-    <h1>Contacto</h1>
-    <p>Contáctanos para información, soporte o agendar una visita.</p>
+    <div class="hero-section">
+      <h1>Contáctanos</h1>
+      <p class="hero-subtitle">Estamos aquí para ayudarte. Información, soporte o agenda tu visita</p>
+    </div>
+
+    <div class="content-section">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Información de Contacto</h2>
+          
+          <div class="contact-methods">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Dirección</h3>
+                <p>Av. El Dorado #123-45<br>
+                Bogotá, Colombia<br>
+                Zona Industrial Norte</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Teléfonos</h3>
+                <p><strong>Principal:</strong> +57 (1) 234-5678<br>
+                <strong>Ventas:</strong> +57 (1) 234-5679<br>
+                <strong>Servicio:</strong> +57 (1) 234-5680</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="contact-details">
+                <h3>WhatsApp</h3>
+                <p><strong>Ventas:</strong> +57 300 123 4567<br>
+                <strong>Servicio Técnico:</strong> +57 300 123 4568<br>
+                <strong>Repuestos:</strong> +57 300 123 4569</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Correos Electrónicos</h3>
+                <p><strong>General:</strong> info@intellirade.com<br>
+                <strong>Ventas:</strong> ventas@intellirade.com<br>
+                <strong>Servicio:</strong> servicio@intellirade.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Horarios de Atención</h3>
+                <p><strong>Lunes a Viernes:</strong> 8:00 AM - 6:00 PM<br>
+                <strong>Sábados:</strong> 8:00 AM - 5:00 PM<br>
+                <strong>Domingos:</strong> 9:00 AM - 3:00 PM</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Emergencias 24/7</h3>
+                <p><strong>Asistencia en Carretera:</strong><br>
+                +57 300 911 MOTO (6686)<br>
+                Solo para clientes IntelliRade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-section">
+          <h2>Envíanos un Mensaje</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="nombre">Nombre Completo *</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="asunto">Asunto *</label>
+              <select id="asunto" name="asunto" required>
+                <option value="">Selecciona un asunto</option>
+                <option value="informacion">Información General</option>
+                <option value="ventas">Consulta de Ventas</option>
+                <option value="servicio">Servicio Técnico</option>
+                <option value="repuestos">Repuestos y Accesorios</option>
+                <option value="financiamiento">Financiamiento</option>
+                <option value="garantia">Garantía</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="queja">Queja</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="acepto" name="acepto" required>
+                <span class="checkmark"></span>
+                Acepto el tratamiento de mis datos personales según la <a href="#" target="_blank">Política de Privacidad</a>
+              </label>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <span class="checkmark"></span>
+                Quiero recibir información sobre ofertas y novedades
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="departments-section">
+        <h2>Departamentos Especializados</h2>
+        <div class="departments-grid">
+          <div class="department-card">
+            <div class="dept-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Ventas</h3>
+            <p>Asesores especializados en cada tipo de motocicleta. Te ayudamos a encontrar la moto perfecta para ti.</p>
+            <div class="dept-contact">
+              <p><i class="fas fa-phone"></i> +57 (1) 234-5679</p>
+              <p><i class="fab fa-whatsapp"></i> +57 300 123 4567</p>
+            </div>
+          </div>
+
+          <div class="department-card">
+            <div class="dept-icon">
+              <i class="fas fa-wrench"></i>
+            </div>
+            <h3>Servicio Técnico</h3>
+            <p>Mantenimiento especializado, reparaciones y diagnósticos con tecnología de punta.</p>
+            <div class="dept-contact">
+              <p><i class="fas fa-phone"></i> +57 (1) 234-5680</p>
+              <p><i class="fab fa-whatsapp"></i> +57 300 123 4568</p>
+            </div>
+          </div>
+
+          <div class="department-card">
+            <div class="dept-icon">
+              <i class="fas fa-cog"></i>
+            </div>
+            <h3>Repuestos</h3>
+            <p>Repuestos originales y accesorios para todas las marcas. Entrega inmediata o por pedido.</p>
+            <div class="dept-contact">
+              <p><i class="fas fa-phone"></i> +57 (1) 234-5681</p>
+              <p><i class="fab fa-whatsapp"></i> +57 300 123 4569</p>
+            </div>
+          </div>
+
+          <div class="department-card">
+            <div class="dept-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Financiamiento</h3>
+            <p>Opciones de crédito flexibles. Te ayudamos a conseguir la mejor opción de financiamiento.</p>
+            <div class="dept-contact">
+              <p><i class="fas fa-phone"></i> +57 (1) 234-5682</p>
+              <p><i class="fas fa-envelope"></i> credito@intellirade.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-section">
+        <h2>Síguenos en Redes Sociales</h2>
+        <div class="social-links">
+          <a href="#" class="social-link facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="social-link instagram">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="social-link youtube">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a href="#" class="social-link tiktok">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+          </a>
+          <a href="#" class="social-link twitter">
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>¿Ofrecen garantía en las motocicletas usadas?</h4>
+            <p>Sí, todas nuestras motos usadas incluyen garantía de 6 meses en motor y transmisión.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿Hacen domicilios?</h4>
+            <p>Realizamos entregas a domicilio en Bogotá y municipios cercanos. Consulta disponibilidad.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿Aceptan motos usadas como parte de pago?</h4>
+            <p>Por supuesto. Evaluamos tu moto actual y te damos el mejor precio como parte de pago.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>¿Qué documentos necesito para comprar?</h4>
+            <p>Cédula de ciudadanía, comprobante de ingresos y referencias comerciales para financiamiento.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2>Cómo Llegar</h2>
+        <div class="map-container">
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Mapa Interactivo</h3>
+            <p>Próximamente disponible</p>
+          </div>
+          <div class="directions">
+            <h3>Indicaciones</h3>
+            <ul>
+              <li><strong>Desde el Norte:</strong> Toma la Autopista Norte hasta la Av. El Dorado, gira a la derecha.</li>
+              <li><strong>Desde el Sur:</strong> Por la Av. Caracas hasta Av. El Dorado, gira a la izquierda.</li>
+              <li><strong>TransMilenio:</strong> Estación El Dorado, camina 5 minutos hacia el norte.</li>
+              <li><strong>Parqueadero:</strong> Disponible gratis para clientes, entrada por la carrera 124.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -37,5 +306,26 @@
       <p style="text-align: center; color: #ccc;">&copy; 2025 IntelliRade. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    // Función para el formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simular envío del formulario
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('¡Mensaje enviado correctamente! Te contactaremos pronto.');
+        this.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
