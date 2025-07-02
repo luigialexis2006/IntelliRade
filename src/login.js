@@ -35,7 +35,7 @@ function verificarUsuario() {
         nombreGuardado.textContent = `Bienvenido ${usuarioEncontrado.nombre}`;
 
         setTimeout(() => {
-            window.location.href = "../vistas/menu.html"; // cámbialo por la página deseada
+            window.location.href = "../vistas/inicio.html"; // cámbialo por la página deseada
         }, 2000);
 
     } else {
