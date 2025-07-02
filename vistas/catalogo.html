@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelliRade - Catálogo de Motocicletas</title>
+  <link rel="stylesheet" href="../styles/stylesVistas.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #111; color: #eee; font-family: 'Segoe UI', sans-serif; }
+    .catalogo { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem; }
+    .moto-card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 1rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .moto-card:hover { transform: scale(1.05); }
+    .moto-card img { width: 100%; border-radius: 8px; }
+    .precio { font-size: 1.2rem; color: #f44336; margin-top: 1rem; }
+    .btn-comprar {
+      background: #f44336;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .btn-comprar:hover { background: #ff6659; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="menu.html" class="logo">🏍️ IntelliRade</a>
+      <ul class="nav-links">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="nuevas.html">Nuevas</a></li>
+        <li><a href="usadas.html">Usadas</a></li>
+        <li><a href="financiamiento.html">Financiamiento</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="catalogo">
+    <div class="moto-card">
+      <img src="../templates/images/shadow-viper.avif" alt="Shadow Viper 800">
+      <h2>Shadow Viper 800</h2>
+      <p class="descripcion">Motor bicilíndrico 800cc, frenos ABS, tablero digital, ideal para ciudad y carretera.</p>
+      <ul>
+        <li>💨 0-100 km/h en 4.2s</li>
+        <li>📂 Consumo: 28 km/l</li>
+        <li>⚙️ Transmisión de 6 velocidades</li>
+      </ul>
+      <p class="precio">$8.900.000 COP</p>
+      <button class="btn-comprar">Ver más</button>
+    </div>
+
+    <div class="moto-card">
+      <img src="../templates/images/Honda.jpg" alt="Night Hawk 1200">
+      <h2>Night Hawk 1200</h2>
+      <p class="descripcion">Chasis de titanio, 1200cc turbo, luces LED violetas, especial para los amantes del poder nocturno.</p>
+      <ul>
+        <li>💨 0-100 km/h en 3.6s</li>
+        <li>📂 Consumo: 21 km/l</li>
+        <li>⚙️ Modos de manejo: Sport, Eco, Urban</li>
+      </ul>
+      <p class="precio">$15.500.000 COP</p>
+      <button class="btn-comprar">Ver más</button>
+    </div>
+
+    <div class="moto-card">
+      <img src="../templates/images/Honda2.avif" alt="Phantom Rider 650">
+      <h2>Phantom Rider 650</h2>
+      <p class="descripcion">Diseño agresivo, suspensión inteligente, conectividad Bluetooth y casco con HUD.</p>
+      <ul>
+        <li>💨 0-100 km/h en 4.8s</li>
+        <li>📂 Consumo: 32 km/l</li>
+        <li>⚙️ Suspensión adaptable</li>
+      </ul>
+      <p class="precio">$10.200.000 COP</p>
+      <button class="btn-comprar">Ver más</button>
+    </div>
+  </main>
+</body>
+</html>
