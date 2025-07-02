@@ -6,24 +6,613 @@
   <title>IntelliRade - Vista</title>
   <link rel="stylesheet" href="../styles/stylesVistas.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b35;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b35, #ffa500);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(255,107,53,0.1)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23333" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,107,53,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255,165,0,0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b35, #ffa500, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff6b35, #ffa500);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,53,0.5);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: #111111;
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #ff6b35;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(0,0,0,0.8));
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,107,53,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 40px rgba(255,107,53,0.2);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #ff6b35;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Bikes Showcase */
+        .bikes-showcase {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        }
+
+        .bikes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .bike-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,107,53,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bike-card:hover {
+            transform: scale(1.05);
+            border-color: #ff6b35;
+            box-shadow: 0 25px 50px rgba(255,107,53,0.3);
+        }
+
+        .bike-image {
+            height: 250px;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #ff6b35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bike-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .bike-card:hover .bike-image::before {
+            left: 100%;
+        }
+
+        .bike-info {
+            padding: 2rem;
+        }
+
+        .bike-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        .bike-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffa500;
+            margin-bottom: 1rem;
+        }
+
+        .bike-specs {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .bike-button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #ff6b35, #ffa500);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bike-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,107,53,0.3);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: #111111;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+
+        .testimonial-author {
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,107,53,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ff6b35;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+            50% { transform: translateY(-100px) translateX(50px); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
   <header>
     <nav class="container">
-      <a href="menu.html" class="logo">🏍️ IntelliRade</a>
+      <a href="./login.html" class="logo">🏍️ IntelliRade</a>
       <ul class="nav-links">
-        <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="nuevas.html">Nuevas</a></li>
-        <li><a href="usadas.html">Usadas</a></li>
-        <li><a href="financiamiento.html">Financiamiento</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="./catalogo.html">Catálogo</a></li>
+        <li><a href="./nuevas.html">Nuevas</a></li>
+        <li><a href="./usadas.html">Usadas</a></li>
+        <li><a href="./financiamiento.html">Financiamiento</a></li>
+        <li><a href="./servicios.html">Servicios</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./testimonios.html">Testimonios</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
       </ul>
     </nav>
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Tu Pasión en Dos Ruedas</h1>
+            <p>Descubre la adrenalina pura con las mejores motocicletas del mercado. Desde deportivas hasta cruiser, tenemos la moto perfecta para ti.</p>
+            <a href="#catalogo" class="cta-button">Explorar Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegir IntelliRade?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Cada motocicleta pasa por rigurosas inspecciones de calidad. Garantizamos que recibas la mejor máquina para dominar el asfalto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Financiamiento Flexible</h3>
+                    <p>Opciones de financiamiento adaptadas a tu presupuesto. Haz realidad tu sueño de tener la moto perfecta con planes accesibles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Servicio Técnico Experto</h3>
+                    <p>Nuestro equipo de mecánicos especializados mantiene tu moto en perfectas condiciones. Servicio post-venta de primera clase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bikes Showcase -->
+    <section class="bikes-showcase">
+        <div class="container">
+            <h2 class="section-title">Motocicletas Destacadas</h2>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <div class="bike-image">🏍️</div>
+                    <div class="bike-info">
+                        <h4>Deportiva Extrema</h4>
+                        <div class="bike-price">$25,999</div>
+                        <div class="bike-specs">
+                            • Motor 1000cc<br>
+                            • 200 HP de potencia<br>
+                            • 0-100 km/h en 2.9s
+                        </div>
+                        <button class="bike-button">Ver Detalles</button>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <div class="bike-image">🏍️</div>
+                    <div class="bike-info">
+                        <h4>Cruiser Clásica</h4>
+                        <div class="bike-price">$18,500</div>
+                        <div class="bike-specs">
+                            • Motor V-Twin 883cc<br>
+                            • Estilo vintage<br>
+                            • Comodidad suprema
+                        </div>
+                        <button class="bike-button">Ver Detalles</button>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <div class="bike-image">🏍️</div>
+                    <div class="bike-info">
+                        <h4>Adventure Touring</h4>
+                        <div class="bike-price">$22,750</div>
+                        <div class="bike-specs">
+                            • Motor 1200cc<br>
+                            • Todo terreno<br>
+                            • Tecnología avanzada
+                        </div>
+                        <button class="bike-button">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "IntelliRade me ayudó a encontrar la moto de mis sueños. El servicio fue excepcional y el financiamiento muy accesible. ¡100% recomendado!"
+                </div>
+                <div class="testimonial-author">- María González</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IntelliRade. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards and bike cards
+        document.querySelectorAll('.feature-card, .bike-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
   </header>
 
   <main class="container">
